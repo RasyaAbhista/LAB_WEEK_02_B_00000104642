@@ -8,6 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".ResultActivity">
 
+    <!-- TextView di tengah layar -->
     <TextView
         android:id="@+id/color_code_result_message"
         android:layout_width="wrap_content"
@@ -15,7 +16,22 @@
         style="@style/text_display"
         android:textColor="@android:color/white"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.5"/>
+
+    <!-- Tombol Back di bawah TextView dengan margin -->
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        style="@style/button"
+        app:layout_constraintTop_toBottomOf="@id/color_code_result_message"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="32dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -21,6 +22,7 @@ class ResultActivity : AppCompatActivity() {
         val colorCode = intent.getStringExtra(COLOR_KEY)
         val backgroundScreen = findViewById<ConstraintLayout>(R.id.background_screen)
         val resultMessage = findViewById<TextView>(R.id.color_code_result_message)
+        val btnBack = findViewById<Button>(R.id.btn_back)
 
         if (!colorCode.isNullOrEmpty()) {
             try {
@@ -40,6 +42,11 @@ class ResultActivity : AppCompatActivity() {
             errorIntent.putExtra(ERROR_KEY, true)
             setResult(Activity.RESULT_OK, errorIntent)
             finish()
+        }
+
+        // Tombol Back: kembali ke MainActivity
+        btnBack.setOnClickListener {
+            finish() // cukup finish() karena MainActivity menunggu hasil
         }
     }
 }
